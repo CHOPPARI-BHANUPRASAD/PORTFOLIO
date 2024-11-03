@@ -131,7 +131,7 @@ header{
     display: flex;
     justify-content: flex-end; */
     max-width: 800px; /* Ensures the image fits within its container */
-    height: 900px;
+    height: 800px;
 }
 .btn-box{
     display: inline-block;
@@ -736,4 +736,7 @@ padding-bottom:3%;
         transform: translateX(0px);
         opacity: 1;
     }
+}
+.colored-letter{
+    color: red;
 }
