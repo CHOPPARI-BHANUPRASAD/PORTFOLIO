@@ -74,3 +74,50 @@ particlesJS("particles-js", {
     },
     retina_detect: true,
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const domain = document.getElementById("domain").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        // Create payload
+        const formData = {
+            name: name,
+            email: email,
+            domain: domain,
+            message: message
+        };
+
+        // Send data to backend
+        fetch("https://portfolio-backend-y29u.onrender.com/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); // Show success message
+            form.reset(); // Reset form
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Error sending message.");
+        });
+    });
+});
+
