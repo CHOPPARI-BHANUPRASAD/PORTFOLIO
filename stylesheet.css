@@ -470,11 +470,11 @@ header{
     opacity: 0;
 
 }
-/* #Skills .Technical-bars {
+#Skills .Technical-bars {
     display: flex;
     flex-direction: column;
     gap: 10px;
-} */
+}
 
 .main-text{
     padding-top: 130px;
@@ -739,4 +739,175 @@ padding-bottom:3%;
 }
 .colored-letter {
     color: red;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+/* ---- Container for Skills ---- */
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 100px;
+}
+
+.container1 {
+  flex: 1;
+  max-width: 600px;
+  padding: 40px;
+  background: transparent;
+}
+
+.heading1 {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 3px;
+  margin-bottom: 30px;
+}
+
+/* ---- Technical Skills ---- */
+.bar {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.bar .info {
+  margin-bottom: 5px;
+}
+
+.bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+}
+
+.progress-line {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #090909;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-line span {
+  height: 100%;
+  display: block;
+  background: rgb(23, 230, 216);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+/* Skill widths */
+.progress-line.html span { width: 90%; }
+.progress-line.css span { width: 99%; }
+.progress-line.javascript span { width: 50%; }
+.progress-line.react span { width: 75%; }
+.progress-line.python span { width: 70%; }
+
+/* Percentage labels */
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+}
+
+.progress-line.html span::after { content: "90%"; }
+.progress-line.css span::after { content: "99%"; }
+.progress-line.javascript span::after { content: "50%"; }
+.progress-line.react span::after { content: "75%"; }
+.progress-line.python span::after { content: "70%"; }
+
+
+.radial-bars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.radial-bar {
+  width: 45%;
+  height: 170px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.radial-bar svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 120px;
+  height: 160px;
+}
+
+.progress-bar {
+  stroke-width: 10;
+  stroke: #000;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 0;
+}
+
+.path {
+  stroke-width: 10;
+  stroke: #0ef;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+}
+
+/* Animate based on percentage */
+.path-1 { animation: animate-path1 1s forwards; }
+.path-2 { animation: animate-path2 1s forwards; }
+.path-3 { animation: animate-path3 1s forwards; }
+.path-4 { animation: animate-path4 1s forwards; }
+.path-5 { animation: animate-path5 1s forwards; }
+.path-6 { animation: animate-path6 1s forwards; }
+
+@keyframes animate-path1 { 100% { stroke-dashoffset: 50; } }   /* 90% */
+@keyframes animate-path2 { 100% { stroke-dashoffset: 75; } }   /* 85% */
+@keyframes animate-path3 { 100% { stroke-dashoffset: 25; } }   /* 95% */
+@keyframes animate-path4 { 100% { stroke-dashoffset: 50; } }   /* 90% */
+@keyframes animate-path5 { 100% { stroke-dashoffset: 60; } }   /* 88% */
+@keyframes animate-path6 { 100% { stroke-dashoffset: 60; } }   /* 88% */
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.text {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: 500;
 }
